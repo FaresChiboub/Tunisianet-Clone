@@ -9,7 +9,8 @@ function OurStore() {
         <Navbar />
         <div className="ourStore--nav">
           <ul>
-            <li>Accueil</li>
+          <li><a href="/"></a>Accueil </li>
+
           </ul>
         </div>
         <div className="ourStore--title">

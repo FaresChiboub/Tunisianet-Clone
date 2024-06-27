@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import OurStore from "./components/OurStore/OurStore";
 import Delivery from "./components/Delivery/Delivery";
 import Condition from "./components/Condition/Condition";
+import SecurePayment from "./components/SecurePayment/SecurePayment";
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
           <Route path="our-stores" element={<OurStore />}></Route>
           <Route path="Delivery" element={<Delivery />}></Route>
           <Route path="terms-of-use" element={<Condition />}></Route>
+          <Route path="secure-payment" element={<SecurePayment />}></Route>
         </Routes>
       </Router>
     </>

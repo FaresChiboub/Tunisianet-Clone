@@ -2,12 +2,8 @@ import Footer from "../HomePage/Footer/Footer";
 import Navbar from "../HomePage/Navbar/Navbar";
 import presentation from "../../assets/Images/About us/presentation.gif";
 import "./About.css";
-import { useNavigate } from "react-router-dom";
 
 function About() {
-  const navigate = useNavigate();
-  function returnHome() {
-    navigate("/");
   }
   return (
     <>
@@ -16,7 +12,7 @@ function About() {
 
         <div className="mini--navbar">
           <ul>
-            <li onClick={returnHome}>Accueil </li>
+            <li><a href="/"></a>Accueil </li>
             <li>|</li>
             <li>
               Informatique Tunisie, boutique de vente de matériels informatiques

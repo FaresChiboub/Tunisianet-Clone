@@ -7,7 +7,10 @@ function Condition() {
       <Navbar />
       <div className="condition--navbar">
         <ul>
-          <li>Accueil</li>
+          <li>
+            <a href="/"></a>Accueil{" "}
+          </li>
+
           <li>|</li>
           <li>Conditions d'utilisation</li>
         </ul>
