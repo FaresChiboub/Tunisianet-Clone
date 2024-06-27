@@ -40,8 +40,8 @@
   display: flex;
   color: rgb(245, 199, 116);
 }
-.ourStore--box ul{
-    flex: 1;
-    margin: auto;
-    margin-left: 350px;
+.ourStore--box ul {
+  flex: 1;
+  margin: auto;
+  margin-left: 350px;
 }

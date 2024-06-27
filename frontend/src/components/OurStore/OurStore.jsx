@@ -9,8 +9,9 @@ function OurStore() {
         <Navbar />
         <div className="ourStore--nav">
           <ul>
-          <li><a href="/"></a>Accueil </li>
-
+            <li>
+              <a href="/">Accueil</a>
+            </li>
           </ul>
         </div>
         <div className="ourStore--title">

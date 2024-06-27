@@ -1,0 +1,45 @@
+.securePayment--navbar ul li {
+  display: inline-flex;
+  padding: 10px;
+}
+.securePayment--navbar {
+  border: 1px solid rgba(0, 0, 0, 0.137);
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+.securePayment--title--hr {
+  width: 10%;
+  margin: auto;
+  margin-top: 12px;
+  color: orange;
+  
+}
+.securePayment--title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  letter-spacing: 1.4px;
+  flex-direction: column;
+}
+.securePayment--content {
+  padding: 10px 3%;
+  border: 1px solid rgba(0, 0, 0, 0.142);
+  width: 90%;
+  margin: auto;
+  border-radius: 5px;
+  flex: 1 1 auto;
+}
+.securePayment--content h2 {
+  text-align: center;
+  padding: 15px;
+  font-weight: 500;
+  color: rgb(66, 90, 206);
+  letter-spacing: 1.5px;
+  font-size: 22px;
+}
+.securePayment--content p {
+  letter-spacing: 1.1px;
+}

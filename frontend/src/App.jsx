@@ -6,6 +6,7 @@ import OurStore from "./components/OurStore/OurStore";
 import Delivery from "./components/Delivery/Delivery";
 import Condition from "./components/Condition/Condition";
 import SecurePayment from "./components/SecurePayment/SecurePayment";
+import Form from "./components/Form/Form";
 function App() {
   return (
     <>
@@ -18,6 +19,7 @@ function App() {
           <Route path="Delivery" element={<Delivery />}></Route>
           <Route path="terms-of-use" element={<Condition />}></Route>
           <Route path="secure-payment" element={<SecurePayment />}></Route>
+          <Route path="personal-info" element={<Form />}></Route>
         </Routes>
       </Router>
     </>

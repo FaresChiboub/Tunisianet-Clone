@@ -14,12 +14,15 @@ body {
 .hidden {
   max-height: 65px;
 }
-li {
-  list-style: none;
+a {
+  color: black;
+  text-decoration: none;
 }
-
 a:hover {
   color: orange;
   transition: 0.3s;
   cursor: pointer;
+}
+li {
+  list-style: none;
 }
