@@ -1,0 +1,185 @@
+/* First Nav */
+nav .firstNav {
+    display: flex;
+    gap: 10px;
+    padding: 10px 8%;
+    justify-content: space-between;
+    background: url("../../../assets/Images/Navbar/bg_header.jpg");
+    height: 45px;
+    overflow: hidden;
+    width: 100%;
+  }
+  .logo--icon{
+    cursor: pointer;
+  }
+  nav .firstNav .left--nav img {
+    width: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -12px;
+  }
+  nav .firstNav .right--nav .search,
+  .cog--wheel,
+  .profile--picture,
+  .shopping--bag {
+    width: 27px;
+    filter: invert();
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  nav .firstNav .right--nav .cog--wheel:hover,
+  .profile--picture:hover,
+  .shopping--bag:hover {
+    transform: scale(1.1);
+  }
+  nav .firstNav .middle--nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav .firstNav .middle--nav img {
+    width: 35px;
+    border: none;
+    filter: invert();
+  }
+  nav .firstNav .middle--nav .search--btn {
+    background-color: rgb(244, 193, 99);
+    outline: none;
+    border-radius: 0px 20px 20px 0;
+    margin-left: -20px;
+    width: 80px;
+    border: none;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav .firstNav .middle--nav input[type="text"] {
+    height: 30px;
+    width: 450px;
+    border-radius: 30px;
+    padding: 15px;
+    border: none;
+  }
+  nav .firstNav .middle--nav input[type="text"]::placeholder {
+    color: grey;
+  }
+  nav .firstNav .right--nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav .firstNav .right--nav .bag--price {
+    margin-left: -13px;
+    color: white;
+    cursor: not-allowed;
+  }
+  /* CSS for dropdown */
+  nav .firstNav .right--nav .wheel--settings {
+    /* Styles for cog wheel dropdown */
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    color: black;
+    background-color: white;
+    top: 45px;
+    margin-left: -280px; /* Adjust this margin for cog wheel dropdown */
+    z-index: 99;
+    padding: 3px;
+    width: 150px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  
+  nav .firstNav .right--nav .wheel--settings.active {
+    max-height: 65px;
+    border-bottom: 2.5px solid orange;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.297);
+  }
+  
+  nav .firstNav .right--nav .profile--settings {
+    /* Styles for profile dropdown */
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    color: black;
+    background-color: white;
+    top: 45px;
+    margin-left: -280px; /* Adjust this margin for profile dropdown */
+    z-index: 99;
+    padding: 3px;
+    width: 150px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  
+  nav .firstNav .right--nav .profile--settings.active {
+    max-height: 65px;
+    border-bottom: 2.5px solid orange;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.297);
+  }
+  
+  nav .firstNav .right--nav .wheel--settings li {
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  nav .firstNav .right--nav .wheel--settings li:hover {
+    color: rgb(217, 164, 66);
+  
+    transition: color 0.3s linear;
+  }
+  
+  nav .firstNav .right--nav .profile--settings li {
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  nav .firstNav .right--nav .profile--settings li:hover {
+    color: rgb(217, 164, 66);
+    transition: color 0.3s linear;
+  }
+  
+  nav .firstNav .right--nav .wheel--settings li img {
+    margin-top: 2px;
+    position: relative;
+    top: 4px;
+    left: -3px;
+  }
+  nav .firstNav .right--nav .balance--icon,
+  .heart--icon {
+    width: 22px;
+    padding: 5px;
+  }
+  /* Second Nav */
+  .secondNav {
+    width: 100%;
+    padding: 10px 8%;
+    color: rgb(130, 126, 245);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.187);
+  }
+  
+  .secondNav .secondNav--list ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .secondNav .secondNav--list ul li {
+    list-style: none;
+    cursor: pointer;
+  }
+  .secondNav .secondNav--list ul :nth-child(1) {
+    background-color: rgb(244, 193, 99);
+    font-size: 16px;
+    color: white;
+    padding: 7px;
+    border-radius: 50px;
+  }
+  .secondNav .secondNav--list ul li:hover {
+    transform: scale(1.04);
+  }
+  .secondNav .secondNav--list ul :nth-child(1):hover {
+    background-color: rgb(87, 87, 184);
+  }
+  
