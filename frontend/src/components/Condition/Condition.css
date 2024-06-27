@@ -1,0 +1,56 @@
+.condition--navbar li {
+  display: inline-flex;
+  padding: 8px;
+}
+.condition--navbar {
+  border: 1px solid rgba(0, 0, 0, 0.101);
+  margin: auto;
+  margin-top: 20px;
+  width: 90%;
+  border-radius: 5px;
+}
+.condition--title {
+  text-align: center;
+  letter-spacing: 1.3px;
+  padding: 20px;
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 16px;
+}
+.condition--title hr {
+  width: 10%;
+  margin: auto;
+  color: orange;
+}
+.condition--container {
+  border: 1px solid rgba(0, 0, 0, 0.117);
+  width: 90%;
+  margin: auto;
+  padding: 10px 3%;
+  flex: 1;
+  margin-top: 30px;
+}
+.condition--container h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0px 20px;
+  font-weight: 500;
+  color: rgb(51, 123, 194);
+}
+.condition--container p {
+  line-height: 25px;
+}
+.condition--container li {
+  color: black;
+}
+.condition--container ol h3 {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px;
+}
+.condition--navbar li:hover {
+  color: orange;
+  cursor: pointer;
+  transition: 0.3s ease;
+}

@@ -12,8 +12,14 @@ body {
   width: 100%;
 }
 .hidden {
- max-height: 65px;
+  max-height: 65px;
 }
 li {
   list-style: none;
+}
+
+a:hover {
+  color: orange;
+  transition: 0.3s;
+  cursor: pointer;
 }
