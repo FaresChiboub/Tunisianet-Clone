@@ -38,7 +38,7 @@ function Contact() {
       <div className="contact--navbar">
         <ul>
           <li>
-            <a href="/"></a>Accueil{" "}
+            <a href="/">Accueil</a>
           </li>
 
           <li>|</li>
