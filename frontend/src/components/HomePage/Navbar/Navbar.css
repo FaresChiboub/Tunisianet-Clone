@@ -1,4 +1,3 @@
-/* First Nav */
 nav .firstNav {
   display: flex;
   gap: 10px;
@@ -8,10 +7,14 @@ nav .firstNav {
   height: 45px;
   overflow: hidden;
   width: 100%;
+  position: relative;
+  z-index: 3;
 }
+
 .logo--icon {
   cursor: pointer;
 }
+
 nav .firstNav .left--nav img {
   width: 170px;
   display: flex;
@@ -19,6 +22,7 @@ nav .firstNav .left--nav img {
   align-items: center;
   margin-top: -12px;
 }
+
 nav .firstNav .right--nav .search,
 .cog--wheel,
 .profile--picture,
@@ -28,23 +32,27 @@ nav .firstNav .right--nav .search,
   margin-right: 20px;
   cursor: pointer;
 }
+
 nav .firstNav .right--nav .cog--wheel:hover,
 .profile--picture:hover,
 .shopping--bag:hover {
   transform: scale(1.1);
 }
+
 nav .firstNav .middle--nav {
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 }
+
 nav .firstNav .middle--nav img {
   width: 35px;
   border: none;
   filter: invert();
   cursor: pointer;
 }
+
 nav .firstNav .middle--nav .search--btn {
   background-color: rgb(244, 193, 99);
   outline: none;
@@ -57,6 +65,7 @@ nav .firstNav .middle--nav .search--btn {
   justify-content: center;
   align-items: center;
 }
+
 nav .firstNav .middle--nav input[type="text"] {
   height: 30px;
   width: 450px;
@@ -64,53 +73,33 @@ nav .firstNav .middle--nav input[type="text"] {
   padding: 15px;
   border: none;
 }
+
 nav .firstNav .middle--nav input[type="text"]::placeholder {
   color: grey;
 }
+
 nav .firstNav .right--nav {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 nav .firstNav .right--nav .bag--price {
   margin-left: -13px;
   color: white;
   cursor: not-allowed;
 }
-/* CSS for dropdown */
-nav .firstNav .right--nav .wheel--settings {
-  /* Styles for cog wheel dropdown */
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  color: black;
-  background-color: white;
-  top: 45px;
-  margin-left: -280px; /* Adjust this margin for cog wheel dropdown */
-  z-index: 99;
-  padding: 3px;
-  width: 150px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
-}
 
-nav .firstNav .right--nav .wheel--settings.active {
-  max-height: 65px;
-  border-bottom: 2.5px solid orange;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.297);
-}
-
+nav .firstNav .right--nav .wheel--settings,
 nav .firstNav .right--nav .profile--settings {
-  /* Styles for profile dropdown */
   display: flex;
   flex-direction: column;
   position: absolute;
   color: black;
   background-color: white;
   top: 45px;
-  margin-left: -280px; /* Adjust this margin for profile dropdown */
-  z-index: 99;
+  margin-left: -280px;
+  z-index: 4;
   padding: 3px;
   width: 150px;
   max-height: 0;
@@ -118,26 +107,20 @@ nav .firstNav .right--nav .profile--settings {
   transition: max-height 0.3s ease-in-out;
 }
 
+nav .firstNav .right--nav .wheel--settings.active,
 nav .firstNav .right--nav .profile--settings.active {
   max-height: 65px;
   border-bottom: 2.5px solid orange;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.297);
 }
 
-nav .firstNav .right--nav .wheel--settings li {
-  cursor: pointer;
-  margin-left: 5px;
-}
-nav .firstNav .right--nav .wheel--settings li:hover {
-  color: rgb(217, 164, 66);
-
-  transition: color 0.3s linear;
-}
-
+nav .firstNav .right--nav .wheel--settings li,
 nav .firstNav .right--nav .profile--settings li {
   cursor: pointer;
   margin-left: 5px;
 }
+
+nav .firstNav .right--nav .wheel--settings li:hover,
 nav .firstNav .right--nav .profile--settings li:hover {
   color: rgb(217, 164, 66);
   transition: color 0.3s linear;
@@ -149,17 +132,21 @@ nav .firstNav .right--nav .wheel--settings li img {
   top: 4px;
   left: -3px;
 }
+
 nav .firstNav .right--nav .balance--icon,
 .heart--icon {
   width: 22px;
   padding: 5px;
 }
+
 /* Second Nav */
 .secondNav {
   width: 100%;
   padding: 10px 8%;
   color: rgb(130, 126, 245);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.187);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.344);
+  position: relative;
+  z-index: 2;
 }
 
 .secondNav .secondNav--list ul {
@@ -167,20 +154,81 @@ nav .firstNav .right--nav .balance--icon,
   justify-content: space-around;
   align-items: center;
 }
+
 .secondNav .secondNav--list ul li {
   list-style: none;
   cursor: pointer;
+  font-size: 14px;
 }
-.secondNav .secondNav--list ul :nth-child(1) {
+
+.secondNav .secondNav--list ul .climatisation--btn {
   background-color: rgb(244, 193, 99);
-  font-size: 16px;
+  font-size: 14px;
   color: white;
   padding: 7px;
   border-radius: 50px;
 }
+
 .secondNav .secondNav--list ul li:hover {
-  transform: scale(1.04);
+  transform: scale(1.03);
+  transition: 0.2s linear;
 }
+
 .secondNav .secondNav--list ul :nth-child(1):hover {
   background-color: rgb(87, 87, 184);
+}
+
+.component-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 8%;
+  z-index: 100;
+  background-color: white;
+  position: absolute;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 1s ease-out, opacity 0.4s ease-out;
+  border-bottom: 2px solid orange;
+ width:100%;
+  
+}
+
+.component-container.active {
+  max-height: 650px; 
+  opacity: 1;
+}
+
+
+.component {
+  flex: 1 1 auto;
+  background-color: #ffffff;
+}
+
+.component ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.component h2 {
+  font-size: 15px;
+  color: rgb(130, 126, 245);
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.component li {
+  font-size: 13px;
+  color: rgb(87, 87, 87);
+  padding: 5px;
+  letter-spacing: 1.1px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+}
+.component li:hover{
+  color: orange;
+  transition: 0.2s ease-in;
 }

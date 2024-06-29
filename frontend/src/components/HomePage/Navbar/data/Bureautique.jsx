@@ -1,3 +1,5 @@
+import "../Navbar.css"; // Adjust the path as needed
+
 const Bureautique = [
     {
         id: 1,
@@ -90,4 +92,22 @@ const Bureautique = [
     }
 ];
 
-export default Bureautique;
+// Define the BureautiqueList component
+const BureautiqueList = ({ show, onMouseLeave }) => {
+    return (
+        <div className={`component-container ${show ? "active" : ""}`} onMouseLeave={onMouseLeave}>
+            {Bureautique.map((category) => (
+                <div className="component" key={category.id}>
+                    <ul>
+                        <h2>{category.title}</h2>
+                        {category.components.map((component, index) => (
+                            <li key={index}>{component}</li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
+        </div>
+    );
+};
+
+export default BureautiqueList;

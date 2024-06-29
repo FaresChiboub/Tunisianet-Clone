@@ -38,7 +38,6 @@ export default function Hero() {
       <Swiper
         spaceBetween={30}
         effect={"fade"}
-        crossFade={true}
         centeredSlides={true}
         autoplay={{
           delay: 5500,
