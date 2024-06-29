@@ -39,7 +39,8 @@ const Impression = [
 // Define the ImpressionList component
 const ImpressionList = ({ show, onMouseLeave }) => {
     return (
-        <div className={`component-container ${show ? "active" : ""}`} onMouseLeave={onMouseLeave}>
+        <div className={`component-container ${show ? "active" : ""}`}
+        onMouseLeave={onMouseLeave}>
             {Impression.map((category) => (
                 <div className="component" key={category.id}>
                     <ul>

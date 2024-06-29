@@ -27,7 +27,8 @@ const Stockage = [
 // Define the StockageList component
 const StockageList = ({ show, onMouseLeave }) => {
     return (
-        <div className={`component-container ${show ? "active" : ""}`} onMouseLeave={onMouseLeave}>
+        <div className={`component-container ${show ? "active" : ""}`}
+        onMouseLeave={onMouseLeave}>
             {Stockage.map((category) => (
                 <div className="component" key={category.id}>
                     <ul>

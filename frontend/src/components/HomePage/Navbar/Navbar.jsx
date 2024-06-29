@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { debounce } from "lodash";
 import cogWheel from "../../../assets/Images/Navbar/cog-wheel.png";
 import profilePicture from "../../../assets/Images/Navbar/user.png";
 import shoppingBag from "../../../assets/Images/Navbar/shopping-bag.png";
@@ -17,7 +18,8 @@ import SecuriteList from "./data/Securité";
 import TelephonieList from "./data/Telephonie";
 import TvSonPhotosList from "./data/Tv-Son-Photos";
 
-const initialState = {
+// Function to return initial state
+const getInitialState = () => ({
   Informatique: false,
   Téléphonie: false,
   Stockage: false,
@@ -27,24 +29,27 @@ const initialState = {
   Bureautique: false,
   Reseaux: false,
   Securite: false,
-};
+});
 
 const Navbar = () => {
-  const [showMenu, setShowMenu] = useState(initialState);
+  const [showMenu, setShowMenu] = useState(getInitialState());
 
-  const handleMouseOver = (menu) => {
-    setShowMenu((prevState) => ({
-      ...initialState,
-      [menu]: true,
+  // Debounce function to delay state updates
+  const debouncedSetShowMenu = debounce(setShowMenu, 300);
+
+  const handleMouseEnter = (x) => {
+    debouncedSetShowMenu((prevState) => ({
+      ...getInitialState(),
+      [x]: true,
     }));
   };
 
   const handleMouseLeave = () => {
-    setShowMenu(initialState);
+    debouncedSetShowMenu(getInitialState());
   };
 
   return (
-    <nav>
+    <nav onMouseLeave={handleMouseLeave}>
       <div className="firstNav">
         <div className="left--nav">
           <img src={logo} className="logo--icon" alt="Logo" />
@@ -79,11 +84,7 @@ const Navbar = () => {
           <ul className="profile--settings">
             <li>Connexion</li>
           </ul>
-          <img
-            src={shoppingBag}
-            className="shopping--bag"
-            alt="Shopping Bag"
-          />
+          <img src={shoppingBag} className="shopping--bag" alt="Shopping Bag" />
           <span className="bag--price">0.000 DT</span>
         </div>
       </div>
@@ -93,50 +94,44 @@ const Navbar = () => {
             <li className="climatisation--btn">Climatisation</li>
             <li
               className="informatique"
-              onMouseOver={() => handleMouseOver("Informatique")}
+              onMouseEnter={() => handleMouseEnter("Informatique")}
             >
               Informatique
             </li>
-            <li onMouseOver={() => handleMouseOver("Téléphonie")}>
+            <li onMouseEnter={() => handleMouseEnter("Téléphonie")}>
               Téléphonie & Tablette
             </li>
-            <li onMouseOver={() => handleMouseOver("Stockage")}>Stockage</li>
-            <li onMouseOver={() => handleMouseOver("Impression")}>
+            <li onMouseEnter={() => handleMouseEnter("Stockage")}>Stockage</li>
+            <li onMouseEnter={() => handleMouseEnter("Impression")}>
               Impression
             </li>
-            <li onMouseOver={() => handleMouseOver("TVSonPhotos")}>
+            <li onMouseEnter={() => handleMouseEnter("TVSonPhotos")}>
               TV-Son-Photos
             </li>
-            <li onMouseOver={() => handleMouseOver("Electromenager")}>
+            <li onMouseEnter={() => handleMouseEnter("Electromenager")}>
               Electroménager
             </li>
-            <li onMouseOver={() => handleMouseOver("Bureautique")}>
+            <li onMouseEnter={() => handleMouseEnter("Bureautique")}>
               Bureautique
             </li>
-            <li onMouseOver={() => handleMouseOver("Reseaux")}>
+            <li onMouseEnter={() => handleMouseEnter("Reseaux")}>
               Réseau & Connectiques
             </li>
           </ul>
         </div>
       </div>
-      <ComponentList show={showMenu.Informatique} onMouseLeave={handleMouseLeave} />
-      <BureautiqueList
-        show={showMenu.Bureautique}
-        onMouseLeave={handleMouseLeave}
-      />
-      <ElectromenagerList
-        show={showMenu.Electromenager}
-        onMouseLeave={handleMouseLeave}
-      />
-      <ImpressionList show={showMenu.Impression} onMouseLeave={handleMouseLeave} />
-      <StockageList show={showMenu.Stockage} onMouseLeave={handleMouseLeave} />
-      <ReseauxList show={showMenu.Reseaux} onMouseLeave={handleMouseLeave} />
-      <SecuriteList show={showMenu.Securite} onMouseLeave={handleMouseLeave} />
-      <TelephonieList show={showMenu.Téléphonie} onMouseLeave={handleMouseLeave} />
-      <TvSonPhotosList
-        show={showMenu.TVSonPhotos}
-        onMouseLeave={handleMouseLeave}
-      />
+      <ComponentList show={showMenu.Informatique} />
+      <BureautiqueList show={showMenu.Bureautique} />
+      <ElectromenagerList show={showMenu.Electromenager} />
+      <ImpressionList show={showMenu.Impression} />
+      <StockageList show={showMenu.Stockage} />
+
+      <ReseauxList show={showMenu.Reseaux} />
+
+      <SecuriteList show={showMenu.Securite} />
+
+      <TelephonieList show={showMenu.Téléphonie} />
+      <TvSonPhotosList show={showMenu.TVSonPhotos} />
     </nav>
   );
 };

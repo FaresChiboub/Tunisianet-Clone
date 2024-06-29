@@ -39,7 +39,8 @@ const Reseaux = [
 // Define the ReseauxList component
 const ReseauxList = ({ show, onMouseLeave }) => {
     return (
-        <div className={`component-container ${show ? "active" : ""}`} onMouseLeave={onMouseLeave}>
+        <div className={`component-container ${show ? "active" : ""}`}
+        onMouseLeave={onMouseLeave}>
             {Reseaux.map((category) => (
                 <div className="component" key={category.id}>
                     <ul>

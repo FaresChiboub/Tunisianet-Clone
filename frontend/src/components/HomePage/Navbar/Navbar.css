@@ -183,13 +183,13 @@ nav .firstNav .right--nav .balance--icon,
   justify-content: space-between;
   align-items: flex-start;
   padding: 10px 8%;
-  z-index: 100;
+  z-index: 999999999;
   background-color: white;
   position: absolute;
   overflow: hidden;
   max-height: 0;
   opacity: 0;
-  transition: max-height 1s ease-out, opacity 0.4s ease-out;
+  transition: max-height 0.7s ease-out, opacity 0.4s ease-out;
   border-bottom: 2px solid orange;
  width:100%;
   
@@ -198,24 +198,31 @@ nav .firstNav .right--nav .balance--icon,
 .component-container.active {
   max-height: 650px; 
   opacity: 1;
+ width:100%;
+
 }
 
 
 .component {
   flex: 1 1 auto;
   background-color: #ffffff;
+ width:100%;
+
 }
 
 .component ul {
   list-style-type: none;
   padding: 0;
+ width:100%;
+
 }
 
 .component h2 {
   font-size: 15px;
   color: rgb(130, 126, 245);
-  margin-top: 10px;
   padding: 5px;
+ width:100%;
+
 }
 
 .component li {

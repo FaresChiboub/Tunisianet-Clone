@@ -95,7 +95,8 @@ const Bureautique = [
 // Define the BureautiqueList component
 const BureautiqueList = ({ show, onMouseLeave }) => {
     return (
-        <div className={`component-container ${show ? "active" : ""}`} onMouseLeave={onMouseLeave}>
+        <div className={`component-container ${show ? "active" : ""}`}
+        onMouseLeave={onMouseLeave}>
             {Bureautique.map((category) => (
                 <div className="component" key={category.id}>
                     <ul>

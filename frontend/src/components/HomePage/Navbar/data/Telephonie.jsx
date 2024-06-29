@@ -36,7 +36,8 @@ const Telephonie = [
 // Define the TelephonieList component
 const TelephonieList = ({ show, onMouseLeave }) => {
     return (
-        <div className={`component-container ${show ? "active" : ""}`} onMouseLeave={onMouseLeave}>
+        <div className={`component-container ${show ? "active" : ""}`}
+        onMouseLeave={onMouseLeave}>
             {Telephonie.map((category) => (
                 <div className="component" key={category.id}>
                     <ul>
