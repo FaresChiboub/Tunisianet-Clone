@@ -82,7 +82,6 @@ nav .firstNav .right--nav {
   justify-content: center;
   align-items: center;
   z-index: 99999;
-  
 }
 
 nav .firstNav .right--nav .bag--price {
@@ -100,13 +99,14 @@ nav .firstNav .right--nav .profile--settings {
   background-color: white;
   top: 45px;
   margin-left: -280px;
-  z-index: 4;
   padding: 3px;
   width: 150px;
   max-height: 0;
-  transition: max-height 0.3s ease-in-out;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.217);
 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.217);
+  z-index: 99999;
+  overflow: hidden;
+  opacity: 0;
 }
 
 nav .firstNav .right--nav .wheel--settings.active,
@@ -114,6 +114,10 @@ nav .firstNav .right--nav .profile--settings.active {
   max-height: 65px;
   border-bottom: 2.5px solid orange;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.297);
+  z-index: 99999;
+  opacity: 1;
+  transition: max-height 0.3s ease-in-out;
+
 }
 
 nav .firstNav .right--nav .wheel--settings li,
@@ -121,12 +125,14 @@ nav .firstNav .right--nav .profile--settings li {
   cursor: pointer;
   margin-left: 5px;
   background-color: white;
+  z-index: 99999;
 }
 
 nav .firstNav .right--nav .wheel--settings li:hover,
 nav .firstNav .right--nav .profile--settings li:hover {
   color: rgb(217, 164, 66);
   transition: color 0.3s linear;
+  z-index: 99999;
 }
 
 nav .firstNav .right--nav .wheel--settings li img {
@@ -134,13 +140,14 @@ nav .firstNav .right--nav .wheel--settings li img {
   position: relative;
   top: 4px;
   left: -3px;
-  z-index: 55555555;
+  z-index: 99999;
 }
 
 nav .firstNav .right--nav .balance--icon,
 .heart--icon {
   width: 22px;
   padding: 5px;
+  z-index: 99999;
 }
 
 /* Second Nav */
@@ -195,38 +202,32 @@ nav .firstNav .right--nav .balance--icon,
   opacity: 0;
   transition: max-height 0.7s ease-out, opacity 0.4s ease-out;
   border-bottom: 2px solid orange;
- width:100%;
-  
+  width: 100%;
 }
 
 .component-container.active {
-  max-height: 650px; 
+  max-height: 650px;
   opacity: 1;
- width:100%;
-
+  width: 100%;
 }
-
 
 .component {
   flex: 1 1 auto;
   background-color: #ffffff;
- width:100%;
-
+  width: 100%;
 }
 
 .component ul {
   list-style-type: none;
   padding: 0;
- width:100%;
-
+  width: 100%;
 }
 
 .component h2 {
   font-size: 15px;
   color: rgb(130, 126, 245);
   padding: 5px;
- width:100%;
-
+  width: 100%;
 }
 
 .component li {
@@ -239,7 +240,7 @@ nav .firstNav .right--nav .balance--icon,
   align-items: center;
   line-height: 20px;
 }
-.component li:hover{
+.component li:hover {
   color: orange;
   transition: 0.2s ease-in;
 }

@@ -33,6 +33,7 @@ const getInitialState = () => ({
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(getInitialState());
+  const [showProfileSettings, setShowProfileSettings] = useState(false);
 
   const debouncedSetShowMenu = debounce((x) => {
     setShowMenu((prevState) => ({
@@ -52,6 +53,21 @@ const Navbar = () => {
     setShowMenu(getInitialState()); // Reset menu state
   };
 
+  // Toggle wheel settings visibility
+  const toggleWheelSettings = () => {
+    setShowProfileSettings(false); // Close profile settings if open
+    setShowMenu((prevState) => ({
+      ...getInitialState(),
+      wheelSettings: !prevState.wheelSettings,
+    }));
+  };
+
+
+  const toggleProfileSettings = () => {
+    setShowMenu(getInitialState()); 
+    setShowProfileSettings((prev) => !prev);
+  };
+
   return (
     <nav onMouseLeave={handleMouseLeave}>
       <div className="firstNav">
@@ -67,8 +83,13 @@ const Navbar = () => {
           </button>
         </div>
         <div className="right--nav">
-          <img src={cogWheel} className="cog--wheel" alt="Cog Wheel" />
-          <ul className="wheel--settings">
+          <img
+            src={cogWheel}
+            className="cog--wheel"
+            alt="Cog Wheel"
+            onClick={toggleWheelSettings} // Toggle wheel settings on click
+          />
+          <ul className={`wheel--settings ${showMenu.wheelSettings ? "active" : ""}`}>
             <li>
               <img src={heartIcon} className="heart--icon" alt="Heart Icon" />
               Mes Favoris
@@ -86,8 +107,9 @@ const Navbar = () => {
             src={profilePicture}
             className="profile--picture"
             alt="profile icon"
+            onClick={toggleProfileSettings}
           />
-          <ul className="profile--settings">
+          <ul className={`profile--settings ${showProfileSettings ? "active" : ""}`}>
             <li>Connexion</li>
           </ul>
           <img src={shoppingBag} className="shopping--bag" alt="Shopping Bag" />
