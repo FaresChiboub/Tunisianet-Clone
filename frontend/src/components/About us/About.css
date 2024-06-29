@@ -12,6 +12,7 @@
   margin-left: 20px;
   cursor: pointer;
   list-style: none;
+  font-size: 16px;
 }
 .aboutUs--navbar ul li:hover {
   color: rgb(249, 210, 111);
@@ -60,4 +61,81 @@
   border: 1px solid rgba(0, 0, 0, 0.058);
   margin: auto;
   padding: 20px;
+}
+@media only screen and (max-width: 480px) {
+  .aboutUs--navbar {
+    width: 90%;
+  }
+
+  .aboutUs--title {
+    font-size: 20px;
+  }
+
+  .aboutUs--content {
+    padding: 20px;
+  }
+
+  .aboutUs--container {
+    width: 95%;
+  }
+}
+
+/* Tablet and Small Laptop Screens */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .aboutUs--navbar {
+    width: 70%;
+  }
+
+  .aboutUs--title {
+    font-size: 22px;
+  }
+
+  .aboutUs--content {
+    padding: 20px 15%;
+  }
+
+  .aboutUs--container {
+    width: 70%;
+  }
+}
+
+/* Laptop Screens */
+@media only screen and (min-width: 769px) and (max-width: 1079px) {
+  .aboutUs--navbar {
+    width: 70%;
+  }
+
+  .aboutUs--title {
+    font-size: 24px;
+  }
+
+  .aboutUs--content {
+    padding: 10px 20%;
+  }
+
+  .aboutUs--container {
+    width: 70%;
+  }
+}
+
+/* 1080p and Wider Screens */
+@media only screen and (min-width: 1080px) {
+  .aboutUs--navbar {
+    width: 70%;
+  }
+
+  .aboutUs--title {
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    margin-top: 15px;
+    padding: 10px 5%;
+  }
+
+  .aboutUs--content {
+    padding: 10px 10%;
+  }
+
+  .aboutUs--container {
+    width: 70%;
+  }
 }

@@ -84,6 +84,7 @@
   padding: 10px;
   position: relative;
   bottom: 5px;
+  cursor: pointer;
 }
 
 .input--box input,
@@ -140,4 +141,114 @@ form {
 .contact--navbar li a:hover {
 color: orange;
 transition: 0.3s ease;
+}
+@media only screen and (max-width: 480px) {
+  .contact--navbar {
+    width: 95%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px;
+  }
+
+  .contact--navbar ul {
+    margin-top: 10px;
+    justify-content: flex-start;
+  }
+
+  .contact--navbar ul li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .contact--page {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .contact--sidebar,
+  .contact--form {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+  }
+
+  .input--box {
+    margin-left: 0;
+    width: 95%;
+  }
+
+  .input--box label {
+    margin-left: 0;
+    cursor: pointer;
+  }
+}
+
+/* Tablet and Small Laptop Screens */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .contact--navbar {
+    width: 90%;
+  }
+
+  .contact--form,
+  .contact--sidebar {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .input--box {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .input--box label {
+    margin-left: 0;
+  }
+}
+
+/* Laptop Screens */
+@media only screen and (min-width: 769px) and (max-width: 1079px) {
+  .contact--navbar {
+    width: 80%;
+  }
+
+  .contact--form,
+  .contact--sidebar {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .input--box {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .input--box label {
+    margin-left: 0;
+  }
+}
+
+/* 1080p and Wider Screens */
+@media only screen and (min-width: 1080px) {
+  .contact--navbar {
+    width: 70%;
+  }
+
+  .contact--form,
+  .contact--sidebar {
+    width: 50%;
+    margin-left: 50px;
+    margin-right: auto;
+  }
+
+  .input--box {
+    margin-left: 0;
+    width: 80%;
+  }
+
+  .input--box label {
+    margin-left: 70px;
+  }
 }

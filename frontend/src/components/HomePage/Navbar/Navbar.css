@@ -4,11 +4,10 @@ nav .firstNav {
   padding: 10px 8%;
   justify-content: space-between;
   background: url("../../../assets/Images/Navbar/bg_header.jpg");
-  height: 45px;
-  overflow: hidden;
+  height: 55px;
   width: 100%;
   position: relative;
-  z-index: 3;
+  z-index: 3333333;
 }
 
 .logo--icon {
@@ -16,7 +15,7 @@ nav .firstNav {
 }
 
 nav .firstNav .left--nav img {
-  width: 170px;
+  width: 190px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,6 +81,8 @@ nav .firstNav .right--nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 99999;
+  
 }
 
 nav .firstNav .right--nav .bag--price {
@@ -103,8 +104,9 @@ nav .firstNav .right--nav .profile--settings {
   padding: 3px;
   width: 150px;
   max-height: 0;
-  overflow: hidden;
   transition: max-height 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.217);
+
 }
 
 nav .firstNav .right--nav .wheel--settings.active,
@@ -118,6 +120,7 @@ nav .firstNav .right--nav .wheel--settings li,
 nav .firstNav .right--nav .profile--settings li {
   cursor: pointer;
   margin-left: 5px;
+  background-color: white;
 }
 
 nav .firstNav .right--nav .wheel--settings li:hover,
@@ -131,6 +134,7 @@ nav .firstNav .right--nav .wheel--settings li img {
   position: relative;
   top: 4px;
   left: -3px;
+  z-index: 55555555;
 }
 
 nav .firstNav .right--nav .balance--icon,

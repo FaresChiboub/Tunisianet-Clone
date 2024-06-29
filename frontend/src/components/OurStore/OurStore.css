@@ -4,7 +4,7 @@
   border: 1px solid rgba(0, 0, 0, 0.099);
   margin: auto;
   border-radius: 6px;
-  margin-top: 18px;
+  margin-top: 10px;
 }
 .ourStore--box {
   display: flex;
@@ -14,7 +14,7 @@
   border: 1px solid rgba(0, 0, 0, 0.092);
   width: 90%;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .ourStore--box img {
   width: 180px;
@@ -23,7 +23,7 @@
 .ourStore--title {
   text-align: center;
   letter-spacing: 2px;
-  margin-top: 30px;
+  margin-top: 10px;
   padding: 20px;
 }
 .ourStore--box ul h2 {
@@ -44,4 +44,74 @@
   flex: 1;
   margin: auto;
   margin-left: 350px;
+}
+
+@media only screen and (max-width: 480px) {
+  .ourStore--nav {
+    width: 90%;
+  }
+
+  .ourStore--box {
+    flex-direction: column;
+    padding: 10px 5%;
+  }
+
+  .ourStore--box img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .ourStore--box ul {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+/* Tablet and Small Laptop Screens */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .ourStore--nav {
+    width: 90%;
+  }
+
+  .ourStore--box {
+    padding: 10px 5%;
+  }
+
+  .ourStore--box ul {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+/* Laptop Screens */
+@media only screen and (min-width: 769px) and (max-width: 1079px) {
+  .ourStore--nav {
+    width: 90%;
+  }
+
+  .ourStore--box {
+    padding: 10px 10%;
+  }
+
+  .ourStore--box ul {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+/* 1080p and Wider Screens */
+@media only screen and (min-width: 1080px) {
+  .ourStore--nav {
+    width: 90%;
+  }
+
+  .ourStore--box {
+    padding: 10px 10%;
+  }
+
+  .ourStore--box ul {
+    margin-left: 200px; /* Adjusted for desktop view */
+    text-align: left;
+  }
 }

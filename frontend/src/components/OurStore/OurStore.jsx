@@ -28,7 +28,9 @@ function OurStore() {
             <li>1002 Tunis</li>
             <li>Tunisia</li>
             <br />
-            <li>{`À propos et Contact ">`}</li>
+            <li>
+              <a href="/contact-us">{`À propos et Contact ">`}</a>
+            </li>
           </ul>
           <ul>
             <li>Lun. 08:00-19:00</li>
@@ -50,7 +52,9 @@ function OurStore() {
             <li>4000 Sousse</li>
             <li>Tunisia</li>
             <br />
-            <li>{`À propos et Contact ">`}</li>
+            <li>
+              <a href="/contact-us">{`À propos et Contact ">`}</a>
+            </li>
           </ul>
           <ul>
             <li>Lun. 08:00-19:00</li>
@@ -72,7 +76,9 @@ function OurStore() {
             <li>2035 Tunis</li>
             <li>Tunisia</li>
             <br />
-            <li>{`À propos et Contact ">`}</li>
+            <li>
+              <a href="/contact-us">{`À propos et Contact ">`}</a>
+            </li>
           </ul>
           <ul>
             <li>Lun. 08:00-19:00</li>
@@ -94,7 +100,9 @@ function OurStore() {
             <li>2035 Tunis</li>
             <li>Tunisia</li>
             <br />
-            <li>{`À propos et Contact ">`}</li>
+            <li>
+              <a href="/contact-us">{`À propos et Contact ">`}</a>
+            </li>
           </ul>
           <ul>
             <li>Lun. 08:00-19:00</li>

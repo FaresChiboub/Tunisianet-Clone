@@ -1,24 +1,24 @@
-import { useState } from "react";
-import { debounce } from "lodash";
-import cogWheel from "../../../assets/Images/Navbar/cog-wheel.png";
-import profilePicture from "../../../assets/Images/Navbar/user.png";
-import shoppingBag from "../../../assets/Images/Navbar/shopping-bag.png";
-import logo from "../../../assets/Images/Navbar/tunisianet-logo.png";
-import search from "../../../assets/Images/Navbar/search.png";
-import heartIcon from "../../../assets/Images/Navbar/heart.png";
-import balanceIcon from "../../../assets/Images/Navbar/balance.png";
-import "./Navbar.css";
-import ComponentList from "./data/Informatique";
-import BureautiqueList from "./data/Bureautique";
-import ElectromenagerList from "./data/Electroménager";
-import ImpressionList from "./data/Impression";
-import StockageList from "./data/Stockage";
-import ReseauxList from "./data/Reseaux";
-import SecuriteList from "./data/Securité";
-import TelephonieList from "./data/Telephonie";
-import TvSonPhotosList from "./data/Tv-Son-Photos";
+import React, { useState } from "react";
+import debounce from "lodash/debounce";
+import {
+  cogWheel,
+  profilePicture,
+  shoppingBag,
+  logo,
+  search,
+  heartIcon,
+  balanceIcon,
+  ComponentList,
+  BureautiqueList,
+  ElectromenagerList,
+  ImpressionList,
+  StockageList,
+  ReseauxList,
+  SecuriteList,
+  TelephonieList,
+  TvSonPhotosList,
+} from "./importNav";
 
-// Function to return initial state
 const getInitialState = () => ({
   Informatique: false,
   Téléphonie: false,
@@ -34,25 +34,31 @@ const getInitialState = () => ({
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(getInitialState());
 
-  // Debounce function to delay state updates
-  const debouncedSetShowMenu = debounce(setShowMenu, 300);
-
-  const handleMouseEnter = (x) => {
-    debouncedSetShowMenu((prevState) => ({
+  const debouncedSetShowMenu = debounce((x) => {
+    setShowMenu((prevState) => ({
       ...getInitialState(),
       [x]: true,
     }));
+  }, 300);
+
+  // Handle mouse enter on menu items
+  const handleMouseEnter = (x) => {
+    debouncedSetShowMenu(x);
   };
 
+  // Handle mouse leave to reset menu state
   const handleMouseLeave = () => {
-    debouncedSetShowMenu(getInitialState());
+    debouncedSetShowMenu.cancel(); // Cancel any pending debounce
+    setShowMenu(getInitialState()); // Reset menu state
   };
 
   return (
     <nav onMouseLeave={handleMouseLeave}>
       <div className="firstNav">
         <div className="left--nav">
-          <img src={logo} className="logo--icon" alt="Logo" />
+          <a href="/">
+            <img src={logo} className="logo--icon" alt="Logo" />
+          </a>
         </div>
         <div className="middle--nav">
           <input type="text" placeholder="Rechercher..." />
@@ -125,11 +131,8 @@ const Navbar = () => {
       <ElectromenagerList show={showMenu.Electromenager} />
       <ImpressionList show={showMenu.Impression} />
       <StockageList show={showMenu.Stockage} />
-
       <ReseauxList show={showMenu.Reseaux} />
-
       <SecuriteList show={showMenu.Securite} />
-
       <TelephonieList show={showMenu.Téléphonie} />
       <TvSonPhotosList show={showMenu.TVSonPhotos} />
     </nav>

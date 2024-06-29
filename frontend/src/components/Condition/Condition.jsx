@@ -8,7 +8,7 @@ function Condition() {
       <div className="condition--navbar">
         <ul>
           <li>
-            <a href="/"></a>Accueil{" "}
+            <a href="/">Accueil</a>
           </li>
 
           <li>|</li>

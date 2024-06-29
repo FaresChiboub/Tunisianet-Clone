@@ -56,3 +56,37 @@
     color: black;
     margin-left: 10px;
 }
+media only screen and (min-width: 481px) and (max-width: 768px) {
+  .delivery--navbar {
+    width: 90%;
+  }
+
+  .delivery--content {
+    width: 80%;
+    padding: 20px;
+  }
+}
+
+/* Laptop Screens */
+@media only screen and (min-width: 769px) and (max-width: 1079px) {
+  .delivery--navbar {
+    width: 70%;
+  }
+
+  .delivery--content {
+    width: 70%;
+    padding: 10px;
+  }
+}
+
+/* 1080p and Wider Screens */
+@media only screen and (min-width: 1080px) {
+  .delivery--navbar {
+    width: 70%;
+  }
+
+  .delivery--content {
+    width: 70%;
+    padding: 40px;
+  }
+}
