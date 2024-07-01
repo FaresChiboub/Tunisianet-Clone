@@ -26,9 +26,11 @@ function Form() {
       [name]: value,
     }));
   }
+
   function handleToggleAccount() {
-    setToggleAccount((prevAccount) => !prevAccount)
+    setToggleAccount((prevAccount) => !prevAccount);
   }
+
   return (
     <>
       <Navbar />
@@ -44,53 +46,61 @@ function Form() {
         <hr />
       </div>
       <form className="form--data" onSubmit={handleSubmit}>
-      {toggleAccount && <p>
-          Vous avez déjà un compte ?
-          <span onClick={handleToggleAccount} className="login">
-            Connectez-vous
-          </span>
-        </p>}
-       {toggleAccount && <div className="form--box">
-          <label htmlFor="gender">Titre</label>
-          <div className="radio-group">
-            <input
-              type="radio"
-              value="M."
-              name="gender"
-              id="gender-m"
-              onChange={handleChange}
-            />
-            <label htmlFor="gender-m">M.</label>
-            <input
-              type="radio"
-              value="Mme."
-              name="gender"
-              id="gender-mme"
-              onChange={handleChange}
-            />
-            <label htmlFor="gender-mme">Mme.</label>
+        {toggleAccount && (
+          <p>
+            Vous avez déjà un compte ?
+            <span onClick={handleToggleAccount} className="login">
+              Connectez-vous
+            </span>
+          </p>
+        )}
+        {toggleAccount && (
+          <div className="form--box">
+            <label htmlFor="gender">Titre</label>
+            <div className="radio-group">
+              <input
+                type="radio"
+                value="M."
+                name="gender"
+                id="gender-m"
+                onChange={handleChange}
+              />
+              <label htmlFor="gender-m">M.</label>
+              <input
+                type="radio"
+                value="Mme."
+                name="gender"
+                id="gender-mme"
+                onChange={handleChange}
+              />
+              <label htmlFor="gender-mme">Mme.</label>
+            </div>
           </div>
-        </div>}
-        {toggleAccount &&  <div className="form--box">
-          <label htmlFor="firstName">Prénom</label>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            onChange={handleChange}
-          />
-          <span className="star--label">*</span>
-        </div>}
-        {toggleAccount && <div className="form--box">
-          <label htmlFor="lastName">Nom</label>
-          <input
-            type="text"
-            name="lastName"
-            id="lastName"
-            onChange={handleChange}
-          />
-          <span className="star--label">*</span>
-        </div>}
+        )}
+        {toggleAccount && (
+          <div className="form--box">
+            <label htmlFor="firstName">Prénom</label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              onChange={handleChange}
+            />
+            <span className="star--label">*</span>
+          </div>
+        )}
+        {toggleAccount && (
+          <div className="form--box">
+            <label htmlFor="lastName">Nom</label>
+            <input
+              type="text"
+              name="lastName"
+              id="lastName"
+              onChange={handleChange}
+            />
+            <span className="star--label">*</span>
+          </div>
+        )}
         <div className="form--box">
           <label htmlFor="email">E-mail</label>
           <input type="email" name="email" id="email" onChange={handleChange} />
@@ -106,22 +116,32 @@ function Form() {
           />
           <span className="star--label">*</span>
         </div>
-        {toggleAccount===false &&<span className="forget--password">Mot de passe oublié ?</span>}
-        {toggleAccount===false &&<span onClick={handleToggleAccount} className="create--account--btn">Pas de compte ? Créez-en un </span>}
-        {toggleAccount && <div className="form--box">
-          <label htmlFor="dateOfBirth">Date de naissance</label>
-          <input
-            type="date"
-            id="dateOfBirth"
-            name="dateOfBirth"
-            onChange={handleChange}
-          />
-          <span className="star--label">*</span>
-        </div>}
+        {!toggleAccount && (
+          <span className="forget--password">Mot de passe oublié ?</span>
+        )}
+        {!toggleAccount && (
+          <span onClick={handleToggleAccount} className="create--account--btn">
+            Pas de compte ? Créez-en un
+          </span>
+        )}
+        {toggleAccount && (
+          <div className="form--box">
+            <label htmlFor="dateOfBirth">Date de naissance</label>
+            <input
+              type="date"
+              id="dateOfBirth"
+              name="dateOfBirth"
+              onChange={handleChange}
+            />
+            <span className="star--label">*</span>
+          </div>
+        )}
         <br />
-        {toggleAccount &&<span className="date--example">(Ex. : 31/05/1970)</span>}
+        {toggleAccount && (
+          <span className="date--example">(Ex. : 31/05/1970)</span>
+        )}
         <button className="submit--btn" type="submit">
-         {toggleAccount?"Enregistrer":"Connexion"}
+          {toggleAccount ? "Enregistrer" : "Connexion"}
         </button>
       </form>
       <Footer />
