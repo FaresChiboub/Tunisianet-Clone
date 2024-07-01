@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import debounce from "lodash/debounce";
+
+import "./Navbar.css";
 import {
   cogWheel,
-  profilePicture,
+  profilePicture as defaultProfilePicture,
   shoppingBag,
   logo,
   search,
@@ -31,7 +33,7 @@ const getInitialState = () => ({
   Securite: false,
 });
 
-const Navbar = () => {
+const Navbar = ({ isLoggedIn, profilePicture, setIsLoggedIn }) => {
   const [showMenu, setShowMenu] = useState(getInitialState());
   const [showProfileSettings, setShowProfileSettings] = useState(false);
 
@@ -42,32 +44,32 @@ const Navbar = () => {
     }));
   }, 300);
 
-  // Handle mouse enter on menu items
   const handleMouseEnter = (x) => {
     debouncedSetShowMenu(x);
   };
 
-  // Handle mouse leave to reset menu state
   const handleMouseLeave = () => {
-    debouncedSetShowMenu.cancel(); // Cancel any pending debounce
-    setShowMenu(getInitialState()); // Reset menu state
+    debouncedSetShowMenu.cancel();
+    setShowMenu(getInitialState());
   };
 
-  // Toggle wheel settings visibility
   const toggleWheelSettings = () => {
-    setShowProfileSettings(false); // Close profile settings if open
+    setShowProfileSettings(false);
     setShowMenu((prevState) => ({
       ...getInitialState(),
       wheelSettings: !prevState.wheelSettings,
     }));
   };
 
-
   const toggleProfileSettings = () => {
-    setShowMenu(getInitialState()); 
+    setShowMenu(getInitialState());
     setShowProfileSettings((prev) => !prev);
   };
 
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    localStorage.setItem("isLoggedIn", "false");
+  };
   return (
     <nav onMouseLeave={handleMouseLeave}>
       <div className="firstNav">
@@ -87,9 +89,13 @@ const Navbar = () => {
             src={cogWheel}
             className="cog--wheel"
             alt="Cog Wheel"
-            onClick={toggleWheelSettings} // Toggle wheel settings on click
+            onClick={toggleWheelSettings}
           />
-          <ul className={`wheel--settings ${showMenu.wheelSettings ? "active" : ""}`}>
+          <ul
+            className={`wheel--settings ${
+              showMenu.wheelSettings ? "active" : ""
+            }`}
+          >
             <li>
               <img src={heartIcon} className="heart--icon" alt="Heart Icon" />
               Mes Favoris
@@ -103,14 +109,31 @@ const Navbar = () => {
               Comparer
             </li>
           </ul>
-          <img
-            src={profilePicture}
+          <a
+            href="#"
             className="profile--picture"
-            alt="profile icon"
             onClick={toggleProfileSettings}
-          />
-          <ul className={`profile--settings ${showProfileSettings ? "active" : ""}`}>
-            <li>Connexion</li>
+          >
+            <img
+              src={defaultProfilePicture || profilePicture}
+              className="profile--picture"
+              alt="profile icon"
+            />
+          </a>
+          <ul
+            className={`profile--settings ${
+              showProfileSettings ? "active" : ""
+            }`}
+          >
+            <li
+              onClick={
+                isLoggedIn
+                  ? handleLogout
+                  : () => (window.location.href = "/personal-info")
+              }
+            >
+              {isLoggedIn ? "Logout" : "Connexion"}
+            </li>
           </ul>
           <img src={shoppingBag} className="shopping--bag" alt="Shopping Bag" />
           <span className="bag--price">0.000 DT</span>

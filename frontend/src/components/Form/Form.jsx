@@ -1,7 +1,7 @@
-import { useState } from "react";
-import Footer from "../HomePage/Footer/Footer";
-import Navbar from "../HomePage/Navbar/Navbar";
+import React, { useState } from "react";
+import profileLogoPic from "../../assets/Images/Login/Logo-Login.jpg";
 import "./Form.css";
+import Navbar from "../HomePage/Navbar/Navbar";
 
 function Form() {
   const [toggleAccount, setToggleAccount] = useState(false);
@@ -13,10 +13,46 @@ function Form() {
     password: "",
     dateOfBirth: "",
   });
+  const [profilePicture, setProfilePicture] = useState(profileLogoPic);
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    localStorage.getItem("isLoggedIn") === "true"
+  );
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("Form submitted with data:", formData);
+
+    const url = toggleAccount
+      ? "http://localhost:8001/api/signup"
+      : "http://localhost:8001/api/login";
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Success:", data);
+
+        if (toggleAccount) {
+          setIsLoggedIn(false);
+          localStorage.setItem("isLoggedIn", "false");
+        } else {
+          setIsLoggedIn(true);
+          localStorage.setItem("isLoggedIn", "true");
+          setProfilePicture(data.profilePicture || profileLogoPic); // Replace with actual logic
+        }
+      })
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+      });
   }
 
   function handleChange(e) {
@@ -33,7 +69,11 @@ function Form() {
 
   return (
     <>
-      <Navbar />
+      <Navbar
+        isLoggedIn={isLoggedIn}
+        profilePicture={profilePicture}
+        setIsLoggedIn={setIsLoggedIn}
+      />
       <div className="form--nav">
         <ul>
           <li>
@@ -42,7 +82,11 @@ function Form() {
         </ul>
       </div>
       <div className="form--title">
-        <h2>Connectez-vous à votre compte</h2>
+        <h2>
+          {toggleAccount
+            ? "Connectez-vous à votre compte"
+            : "Créez votre compte"}
+        </h2>
         <hr />
       </div>
       <form className="form--data" onSubmit={handleSubmit}>
@@ -144,7 +188,6 @@ function Form() {
           {toggleAccount ? "Enregistrer" : "Connexion"}
         </button>
       </form>
-      <Footer />
     </>
   );
 }
