@@ -1,5 +1,6 @@
-import  { useState } from "react";
+import { useState } from "react";
 import debounce from "lodash/debounce";
+import profileDefaultPicture from "../../../assets/Images/Login/Logo-Login.jpg";
 
 import "./Navbar.css";
 import {
@@ -115,7 +116,10 @@ const Navbar = ({ isLoggedIn, profilePicture, setIsLoggedIn }) => {
             onClick={toggleProfileSettings}
           >
             <img
-              src={defaultProfilePicture || profilePicture}
+              src={
+                isLoggedIn === false ? defaultProfilePicture : profileDefaultPicture
+              }
+              style={{ filter: isLoggedIn ? "none" : "grayscale(10%)" }}
               className="profile--picture"
               alt="profile icon"
             />

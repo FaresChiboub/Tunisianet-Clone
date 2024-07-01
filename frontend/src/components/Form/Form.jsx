@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import Navbar from "../HomePage/Navbar/Navbar";
 import profileLogoPic from "../../assets/Images/Login/Logo-Login.jpg";
 import "./Form.css";
-import Navbar from "../HomePage/Navbar/Navbar";
 
 function Form() {
   const [toggleAccount, setToggleAccount] = useState(false);
@@ -13,7 +13,9 @@ function Form() {
     password: "",
     dateOfBirth: "",
   });
-  const [profilePicture, setProfilePicture] = useState(profileLogoPic);
+  const [profilePicture, setProfilePicture] = useState(
+    localStorage.getItem("profilePicture") || profileLogoPic
+  );
   const [isLoggedIn, setIsLoggedIn] = useState(
     localStorage.getItem("isLoggedIn") === "true"
   );
@@ -44,10 +46,12 @@ function Form() {
         if (toggleAccount) {
           setIsLoggedIn(false);
           localStorage.setItem("isLoggedIn", "false");
+          setProfilePicture(profileLogoPic); // Set default picture on logout
         } else {
           setIsLoggedIn(true);
           localStorage.setItem("isLoggedIn", "true");
-          setProfilePicture(data.profilePicture || profileLogoPic); // Replace with actual logic
+          localStorage.setItem("profilePicture", data.profilePicture); // Store profile picture in localStorage
+          setProfilePicture(data.profilePicture || profileLogoPic); // Set profile picture on successful login
         }
       })
       .catch((error) => {
@@ -71,7 +75,7 @@ function Form() {
     <>
       <Navbar
         isLoggedIn={isLoggedIn}
-        profilePicture={profilePicture}
+        profilePicture={profilePicture} // Pass profilePicture state to Navbar
         setIsLoggedIn={setIsLoggedIn}
       />
       <div className="form--nav">
@@ -147,7 +151,12 @@ function Form() {
         )}
         <div className="form--box">
           <label htmlFor="email">E-mail</label>
-          <input type="email" name="email" id="email" onChange={handleChange} />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            onChange={handleChange}
+          />
           <span className="star--label">*</span>
         </div>
         <div className="form--box">
@@ -164,7 +173,10 @@ function Form() {
           <span className="forget--password">Mot de passe oublié ?</span>
         )}
         {!toggleAccount && (
-          <span onClick={handleToggleAccount} className="create--account--btn">
+          <span
+            onClick={handleToggleAccount}
+            className="create--account--btn"
+          >
             Pas de compte ? Créez-en un
           </span>
         )}
