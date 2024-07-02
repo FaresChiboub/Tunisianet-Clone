@@ -1,5 +1,4 @@
 import bcrypt from "bcrypt";
-
 import { generateToken } from "../utils/jwtUtils.js";
 import User from "../models/User.js";
 
@@ -17,10 +16,16 @@ const loginUser = async (req, res) => {
     }
 
     const token = generateToken(user);
-    res.json({ token });
+    // Return user details along with token
+    res.json({
+      token,
+      firstName: user.firstName,
+      lastName: user.lastName,
+    });
   } catch (error) {
     console.error("Error logging in:", error);
     return res.status(500).json({ message: "Internal server error" });
   }
 };
+
 export { loginUser };

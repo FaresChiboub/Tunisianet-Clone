@@ -1,11 +1,10 @@
+import React from "react";
 import { useState } from "react";
 import debounce from "lodash/debounce";
 import profileDefaultPicture from "../../../assets/Images/Login/Logo-Login.jpg";
-
 import "./Navbar.css";
 import {
   cogWheel,
-  profilePicture as defaultProfilePicture,
   shoppingBag,
   logo,
   search,
@@ -70,7 +69,9 @@ const Navbar = ({ isLoggedIn, profilePicture, setIsLoggedIn }) => {
   const handleLogout = () => {
     setIsLoggedIn(false);
     localStorage.setItem("isLoggedIn", "false");
+    window.location.reload();
   };
+
   return (
     <nav onMouseLeave={handleMouseLeave}>
       <div className="firstNav">
@@ -116,12 +117,10 @@ const Navbar = ({ isLoggedIn, profilePicture, setIsLoggedIn }) => {
             onClick={toggleProfileSettings}
           >
             <img
-              src={
-                isLoggedIn === false ? defaultProfilePicture : profileDefaultPicture
-              }
-              style={{ filter: isLoggedIn ? "none" : "grayscale(10%)" }}
+              src={isLoggedIn ? profileDefaultPicture : profilePicture}
               className="profile--picture"
-              alt="profile icon"
+              alt="Profile Picture"
+              style={{ filter: isLoggedIn ? "none" : "grayscale(100%)" }}
             />
           </a>
           <ul
@@ -136,7 +135,7 @@ const Navbar = ({ isLoggedIn, profilePicture, setIsLoggedIn }) => {
                   : () => (window.location.href = "/personal-info")
               }
             >
-              {isLoggedIn ? "Logout" : "Connexion"}
+              {isLoggedIn ? "Deconnexion" : "Connexion"}
             </li>
           </ul>
           <img src={shoppingBag} className="shopping--bag" alt="Shopping Bag" />

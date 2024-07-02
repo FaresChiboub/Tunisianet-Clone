@@ -1,14 +1,16 @@
-
-import Footer from "../Footer/Footer";
-import Hero from "../Hero/Hero";
+import React from "react";
 import Navbar from "../Navbar/Navbar";
+import Hero from "../Hero/Hero";
+import Footer from "../Footer/Footer";
 
-function HomePage() {
-  
-
+function HomePage({ isLoggedIn, profilePicture, setIsLoggedIn }) {
   return (
     <>
-      <Navbar/>
+      <Navbar
+        isLoggedIn={isLoggedIn}
+        profilePicture={profilePicture}
+        setIsLoggedIn={setIsLoggedIn}
+      />
       <Hero />
       <Footer />
     </>
