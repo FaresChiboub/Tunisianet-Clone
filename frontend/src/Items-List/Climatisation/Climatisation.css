@@ -103,3 +103,58 @@ p {
   position: relative;
   right: 30px;
 }
+@media (max-width: 14500px) {
+  .climatisation--navbar {
+    width: 90%;
+    margin-top: 15px;
+  }
+  .climatisation-sidebar {
+    margin-left: 50px;
+    margin-top: 40px;
+    width: 25%;
+  }
+  .climatisation--bar {
+    width: 65%;
+    right: 50px;
+  }
+}
+
+@media (max-width: 992px) {
+  .climatisation-sidebar {
+    margin-left: 20px;
+    width: 30%;
+    position: relative;
+    top: 80px;
+  }
+  .climatisation--bar {
+    width: 80%;
+    right: 20px;
+    height: 50px;
+    border: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .climatisation--navbar {
+    width: 100%;
+  }
+  .climatisation-sidebar {
+    margin-left: 10px;
+    width: 45%;
+    position: relative;
+    top: 60px;
+  }
+  .climatisation--bar {
+    width: 90%;
+    right: 10px;
+    border: none;
+ }
+ .climatisation--bar select{
+width: 100px;
+ }
+}
+@media (max-width: 576px) {
+  .climatisation-sidebar {
+    width: 40%;
+  }
+}

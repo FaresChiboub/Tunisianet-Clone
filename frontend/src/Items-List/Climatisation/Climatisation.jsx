@@ -12,6 +12,7 @@ function Climatisation({
   handleLogout,
 }) {
   const [sliderValue, setSliderValue] = useState(50);
+  const [itemQuantity, setItemQuantity] = useState(0);
   const [defaultOption, setDefaultOption] = useState("Prix croissants");
   function sliderHandleChange(e) {
     setSliderValue(e.target.value);
@@ -205,7 +206,7 @@ function Climatisation({
             <img src={gridIcon2}></img>
           </div>
           <div className="middle--bar">
-            <p>Il y a 94 produits.</p>
+            <p>Il y a {itemQuantity} produits.</p>
           </div>
           <div className="right--bar">
             <p>Trier par :</p>

@@ -43,6 +43,7 @@ nav .firstNav .middle--nav {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  border-radius: 25px;
 }
 
 nav .firstNav .middle--nav img {
@@ -251,4 +252,132 @@ nav .firstNav .right--nav .balance--icon,
 }
 .climatisation--btn a{
   color: white;
+}
+@media (max-width: 992px) {
+  nav .firstNav .left--nav img {
+    width: 160px;
+    margin-top: -10px;
+  }
+
+  nav .firstNav .middle--nav input[type="text"] {
+    width: 300px;
+  }
+
+  .secondNav .secondNav--list ul {
+    justify-content: space-between;
+  }
+
+  .secondNav .secondNav--list ul .climatisation--btn {
+    padding: 5px;
+  }
+}
+@media (max-width: 1200px) {
+
+  nav .firstNav {
+    padding: 10px 6%;
+  }
+
+  nav .firstNav .left--nav img {
+    width: 170px;
+    margin-top: -10px;
+  }
+
+  nav .firstNav .right--nav {
+    margin-right: 15px;
+  }
+
+  nav .firstNav .middle--nav {
+    width: 40%;
+  }
+
+  nav .firstNav .middle--nav input[type="text"] {
+    width: 400px;
+  }
+
+  nav .firstNav .middle--nav .search--btn {
+    margin-left: -80px;
+    width: 80px;
+  }
+
+  nav .firstNav .right--nav .wheel--settings,
+  nav .firstNav .right--nav .profile--settings {
+    margin-left: -230px;
+  }
+
+  /* Second Nav adjustments */
+  .secondNav {
+    padding: 10px;
+    font-size: 11px;
+  }
+
+  .secondNav .secondNav--list ul {
+    justify-content: space-around;
+  }
+}
+@media (max-width: 768px) {
+  nav .firstNav {
+    padding: 10px 5%;
+  }
+
+  nav .firstNav .left--nav img {
+    width: 140px;
+    margin-top: -8px;
+  }
+
+  nav .firstNav .middle--nav input[type="text"] {
+    width: 220px;
+    margin-left: -60px;
+  }
+
+  .secondNav {
+    padding: 10px 5%;
+  }
+}
+
+@media (max-width: 576px) {
+  nav .firstNav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav .firstNav .left--nav img {
+    width: 120px;
+    margin-top: 0;
+  }
+
+  nav .firstNav .right--nav {
+    margin-top: 10px;
+  }
+
+  nav .firstNav .middle--nav {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  nav .firstNav .middle--nav input[type="text"] {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  nav .firstNav .middle--nav .search--btn {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 20px;
+  }
+
+  nav .firstNav .right--nav .wheel--settings,
+  nav .firstNav .right--nav .profile--settings {
+    margin-left: -100%;
+    width: 200px;
+  }
+  .secondNav .secondNav--list ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .secondNav .secondNav--list ul .climatisation--btn {
+    width: 100%;
+    text-align: center;
+  }
 }
