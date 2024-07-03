@@ -39,7 +39,17 @@ function App() {
       <Route path="/terms-of-use" element={<Condition />} />
       <Route path="/secure-payment" element={<SecurePayment />} />
       <Route path="/personal-info" element={<Form />} />
-      <Route path="/climatisation" element={<Climatisation />} />
+      <Route
+        path="/climatisation"
+        element={
+          <Climatisation
+            isLoggedIn={isLoggedIn}
+            profilePicture={userPicture || profilePicture}
+            setIsLoggedIn={setIsLoggedIn}
+            userPicture={userPicture}
+          />
+        }
+      />
     </Routes>
   );
 }

@@ -19,7 +19,7 @@
   margin-left: 10px;
 }
 .climatisation-sidebar {
-  margin-left: 75px;
+  margin-left: 100px;
   margin-top: 50px;
   border: 1px solid black;
   width: 20%;
@@ -28,7 +28,7 @@
   flex-direction: column;
   background-color: aliceblue;
   padding: 15px;
-
+  border-radius: 5px;
 }
 .climatisation-sidebar h3,
 p {
@@ -39,6 +39,67 @@ p {
 }
 .Climatisation--order {
   display: flex;
-gap: 7px;
+  gap: 7px;
   padding: 5px;
+  font-size: 13px;
+}
+.climatisation--main {
+  margin: auto;
+  position: relative;
+}
+.climatisation--bar img {
+  width: 30px;
+  height: 30px;
+}
+.climatisation--bar {
+  display: flex;
+  justify-content: space-between;
+  width: 68%;
+  position: absolute;
+  top: 0;
+  padding: 5px 3%;
+  right: 98px;
+  border: 1px solid rgba(0, 0, 0, 0.068);
+  border-radius: 5px;
+}
+.climatisation--bar select {
+  background-color: orange;
+  border-radius: 30px;
+  width: 350px;
+  padding: 10px;
+  color: white;
+  font-size: 13px;
+  letter-spacing: 1.3px;
+  border: none;
+  outline: none;
+}
+.right--bar {
+  display: inline-flex;
+  position: relative;
+  left: 50px;
+  
+}
+
+.left--bar img:nth-child(2) {
+  width: 30px;
+  height: 30px;
+ 
+}
+.left--bar img:nth-child(1) {
+  width: 23px;
+  height: 23px;
+  position: relative;
+  top: -3px;
+  left: -10px;
+}
+.left--bar img {
+  margin-top: 5px;
+}
+.middle--bar {
+  position: relative;
+  left: 50px;
+}
+.left--bar{
+  position: relative;
+  right: 30px;
 }

@@ -45,7 +45,7 @@ const Form = () => {
         if (toggleAccount) {
           setIsLoggedIn(false);
           localStorage.setItem("isLoggedIn", "false");
-          setProfilePicture(userPicture); // Set user picture as default on logout
+          setProfilePicture(userPicture); 
         } else {
           setIsLoggedIn(true);
           localStorage.setItem("isLoggedIn", "true");
