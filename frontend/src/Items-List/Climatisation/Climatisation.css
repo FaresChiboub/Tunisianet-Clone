@@ -1,0 +1,44 @@
+.climatisation--navbar li {
+  display: inline-flex;
+  padding: 5px;
+  cursor: pointer;
+}
+.climatisation--navbar {
+  border: 1px solid rgba(0, 0, 0, 0.103);
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 2px;
+  border-radius: 4px;
+}
+.climatisation--navbar li:hover {
+  color: orange;
+  transition: 0.5s ease;
+}
+.slider-container {
+  margin-left: 10px;
+}
+.climatisation-sidebar {
+  margin-left: 75px;
+  margin-top: 50px;
+  border: 1px solid black;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: aliceblue;
+  padding: 15px;
+
+}
+.climatisation-sidebar h3,
+p {
+  padding: 10px;
+}
+.slider-label {
+  padding: 5px;
+}
+.Climatisation--order {
+  display: flex;
+gap: 7px;
+  padding: 5px;
+}

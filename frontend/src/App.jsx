@@ -9,6 +9,7 @@ import Condition from "./components/Condition/Condition";
 import SecurePayment from "./components/SecurePayment/SecurePayment";
 import Form from "./components/Form/Form";
 import userPicture from "./assets/Images/Navbar/user.png";
+import Climatisation from "./Items-List/Climatisation/Climatisation";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -25,7 +26,7 @@ function App() {
         element={
           <HomePage
             isLoggedIn={isLoggedIn}
-            profilePicture={userPicture || profilePicture} 
+            profilePicture={userPicture || profilePicture}
             setIsLoggedIn={setIsLoggedIn}
             userPicture={userPicture}
           />
@@ -38,6 +39,7 @@ function App() {
       <Route path="/terms-of-use" element={<Condition />} />
       <Route path="/secure-payment" element={<SecurePayment />} />
       <Route path="/personal-info" element={<Form />} />
+      <Route path="/climatisation" element={<Climatisation />} />
     </Routes>
   );
 }
